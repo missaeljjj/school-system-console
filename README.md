@@ -1,4 +1,4 @@
-# School System Console
+# School System Console -> In development
 
 Academic school management system built with C# and PostgreSQL.
 
