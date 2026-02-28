@@ -1,9 +1,13 @@
 # School System Console -> In development
 
-Academic school management system built with C# and PostgreSQL.
+Console-based academic management system designed with layered architecture principles using C# and PostgreSQL.
 
 ## Features
-- Student management
+* Student management
+  - Add students
+  - Show students
+  - Search by grade and section
+  - Search by name or student ID
 - Teacher management
 - Data validation
 - Console menu navigation
@@ -13,6 +17,16 @@ Academic school management system built with C# and PostgreSQL.
 - C#
 - .NET
 - PostgreSQL
+
+## Architecture
+This project follows a layered architecture:
+
+UI + Logic → Interface → Repository → Database
+
+This separation improves:
+- Scalability
+- Maintainability
+- Testability
 
 ## Setup
 Before running the project, configure your database credentials in:
@@ -36,22 +50,34 @@ dotnet run
 ```
 SCHOOL-MANAGEMENT-v0.1
 │
+├── Aplicaciones
+│   └── Interfaces.cs
 ├── Base de datos
-│   └── PgSql.cs
-├── Datos
-│   └── Datos.cs
+│   ├── PgSql.cs
+│   └── ComandoSql.cs
+├── Entidades
+│   ├── Estudiante.cs
+│   ├── Maestros.cs
+│   └── Usuario.cs
 ├── Extra
 │   ├── Menu.cs
 │   ├── Utiles.cs
 │   └── Validacion.cs
 ├── Gestion
+│   ├── Busqueda
+│   │   └── Buscar
 │   ├── Agregar.cs
 │   └── Mostrar.cs
+├── Infraestructura
+│   ├── RepositorioOperaciones.cs
+│   └── Repositorios.cs
 ├── Menus
 │   ├── Consultas.cs
 │   ├── Elecciones.cs
 │   ├── GestionMenuEstudiantes.cs
-│   └── MenuGestionMaestroscs.cs
+│   ├── MenuBusqueda.cs
+│   └── MenuGestionMaestros.cs
+├── GlobalUsing.cs
 └── Program.cs
 ```
 
@@ -59,7 +85,9 @@ SCHOOL-MANAGEMENT-v0.1
 Project created for learning purposes. Future versions will include:
 - Grade history system
 - Improved database design
+- Dependency Injection container
+- Logging system
 - Graphical interface
 
 ## Author
-Missael — Systems Engineering Student from Nicaragua 
+Missael — Systems Engineering Student from Nicaragua
