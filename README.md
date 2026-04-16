@@ -1,5 +1,9 @@
 # School System Console -> In development
 
+> [!CAUTION]
+> **PROJECT STATUS: ON HOLD (Database Restructuring)**
+> This project is currently paused while we undergo a full database redesign and schema normalization to improve scalability and data integrity.
+
 Console-based academic management system designed with layered architecture principles using C# and PostgreSQL.
 
 ## Features
